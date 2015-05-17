@@ -63,10 +63,14 @@ bindsym $mod+d exec "dmenu_run -fn 'Migu 1P-12'"
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
+bindsym $mod+j         exec "~/.i3/move-cursor-window-center.sh focus left"
+bindsym $mod+k         exec "~/.i3/move-cursor-window-center.sh focus down"
+bindsym $mod+l         exec "~/.i3/move-cursor-window-center.sh focus up"
+bindsym $mod+semicolon exec "~/.i3/move-cursor-window-center.sh focus right"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -75,9 +79,9 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
+bindsym $mod+Shift+j         move left
+bindsym $mod+Shift+k         move down
+bindsym $mod+Shift+l         move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
