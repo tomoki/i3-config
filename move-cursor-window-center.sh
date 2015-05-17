@@ -1,5 +1,5 @@
 #!/bin/sh
-
+eval i3-msg $*
 HERE=`xdotool getwindowfocus`
 eval `xdotool getwindowgeometry --shell $HERE`
 
@@ -8,4 +8,3 @@ NY=`expr $HEIGHT / 2`
 
 xdotool mousemove --window $WINDOW $NX $NY
 
-eval $*
