@@ -19,8 +19,6 @@ exec "xset s 3600 3600"
 exec "pasystray &"
 
 bindsym $mod+b exec firefox
-bindsym $mod+button4 workspace prev
-bindsym $mod+button5 workspace next
 
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
@@ -32,14 +30,6 @@ bindsym XF86Display exec "xrandr --auto"
 bindsym XF86AudioRaiseVolume exec "pulseaudio-ctl up"
 bindsym XF86AudioLowerVolume exec "pulseaudio-ctl down"
 bindsym XF86AudioMute exec "pulseaudio-ctl mute"
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below. ISO 10646 = Unicode
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, if you need a lot of unicode glyphs or
-# right-to-left text rendering, you should instead use pango for rendering and
-# chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
 font pango:Migu1M 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -63,41 +53,26 @@ bindsym $mod+d exec "dmenu_run -fn 'Migu 1P-12'"
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
+bindsym $mod+u exec "~/.i3/move-cursor-window-center.sh workspace prev"
+bindsym $mod+i exec "~/.i3/move-cursor-window-center.sh workspace next"
+
 bindsym $mod+j         exec "~/.i3/move-cursor-window-center.sh focus left"
 bindsym $mod+k         exec "~/.i3/move-cursor-window-center.sh focus down"
 bindsym $mod+l         exec "~/.i3/move-cursor-window-center.sh focus up"
 bindsym $mod+semicolon exec "~/.i3/move-cursor-window-center.sh focus right"
+bindsym $mod+a         exec "~/.i3/move-cursor-window-center.sh focus parent"
+bindsym $mod+Shift+j         exec "~/.i3/move-cursor-window-center.sh move left"
+bindsym $mod+Shift+k         exec "~/.i3/move-cursor-window-center.sh move down"
+bindsym $mod+Shift+l         exec "~/.i3/move-cursor-window-center.sh move up"
+bindsym $mod+Shift+semicolon exec "~/.i3/move-cursor-window-center.sh move right"
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j         move left
-bindsym $mod+Shift+k         move down
-bindsym $mod+Shift+l         move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
+#bindsym $mod+c focus child
 # split in horizontal orientation
 bindsym $mod+v split h
-
 # split in vertical orientation
 bindsym $mod+h split v
-
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+f exec "~/.i3/move-cursor-window-center.sh fullscreen"
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -110,40 +85,34 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
 ## Window border style
 new_window none
 hide_edge_borders both
 focus_follows_mouse yes
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 exec "~/.i3/move-cursor-window-center.sh workspace 1"
+bindsym $mod+2 exec "~/.i3/move-cursor-window-center.sh workspace 2"
+bindsym $mod+3 exec "~/.i3/move-cursor-window-center.sh workspace 3"
+bindsym $mod+4 exec "~/.i3/move-cursor-window-center.sh workspace 4"
+bindsym $mod+5 exec "~/.i3/move-cursor-window-center.sh workspace 5"
+bindsym $mod+6 exec "~/.i3/move-cursor-window-center.sh workspace 6"
+bindsym $mod+7 exec "~/.i3/move-cursor-window-center.sh workspace 7"
+bindsym $mod+8 exec "~/.i3/move-cursor-window-center.sh workspace 8"
+bindsym $mod+9 exec "~/.i3/move-cursor-window-center.sh workspace 9"
+bindsym $mod+0 exec "~/.i3/move-cursor-window-center.sh workspace 10"
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 exec "~/.i3/move-cursor-window-center.sh move container to workspace 1"
+bindsym $mod+Shift+2 exec "~/.i3/move-cursor-window-center.sh move container to workspace 2"
+bindsym $mod+Shift+3 exec "~/.i3/move-cursor-window-center.sh move container to workspace 3"
+bindsym $mod+Shift+4 exec "~/.i3/move-cursor-window-center.sh move container to workspace 4"
+bindsym $mod+Shift+5 exec "~/.i3/move-cursor-window-center.sh move container to workspace 5"
+bindsym $mod+Shift+6 exec "~/.i3/move-cursor-window-center.sh move container to workspace 6"
+bindsym $mod+Shift+7 exec "~/.i3/move-cursor-window-center.sh move container to workspace 7"
+bindsym $mod+Shift+8 exec "~/.i3/move-cursor-window-center.sh move container to workspace 8"
+bindsym $mod+Shift+9 exec "~/.i3/move-cursor-window-center.sh move container to workspace 9"
+bindsym $mod+Shift+0 exec "~/.i3/move-cursor-window-center.sh move container to workspace 10"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -152,8 +121,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+u workspace prev
-bindsym $mod+i workspace next
 # resize window (you can also use the mouse for that)
 mode "resize" {
    # These bindings trigger as soon as you enter the resize mode
