@@ -11,18 +11,21 @@
 #
 set $mod Mod4
 
-exec "nitrogen --restore &"
+# exec "nitrogen --restore &"
 exec "redshift -O 4500"
-
+exec "nitrogen --restore &"
 exec "dropbox &"
 exec "xset s 3600 3600"
 exec "pasystray &"
+exec "~/.i3/toggle-touchpad.sh"
+# exec "compton -b -CG"
+exec "xcompmgr -n"
 
 bindsym $mod+b exec firefox
 
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
-bindsym XF86Tools exec "~/toggle_touchpad.sh"
+bindsym XF86Tools exec "~/.i3/toggle-touchpad.sh"
 bindsym XF86Search exec "firefox"
 bindsym XF86LaunchA exec "emacs"
 bindsym XF86Explorer exec "thunar"
