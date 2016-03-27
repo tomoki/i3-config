@@ -18,8 +18,8 @@ exec "dropbox &"
 exec "xset s 3600 3600"
 exec "pasystray &"
 exec "~/.i3/toggle-touchpad.sh"
-# exec "compton -b -CG"
 exec "xcompmgr -n"
+exec "conky --config ~/.i3/conky.conf &"
 
 bindsym $mod+b exec firefox
 
