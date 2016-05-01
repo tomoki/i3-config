@@ -13,13 +13,25 @@ set $mod Mod4
 
 # exec "nitrogen --restore &"
 exec "redshift -O 4500"
-# exec "nitrogen --restore &"
+exec "nitrogen --restore &"
 exec "dropbox &"
 exec "xset s 3600 3600"
+exec "~/.i3/toggle-touchpad.sh"
 exec "xcompmgr -n"
+exec "conky --config ~/.i3/multi/conky.conf &"
 
 bindsym $mod+b exec firefox
 
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
+bindsym XF86Tools exec "~/.i3/toggle-touchpad.sh"
+bindsym XF86Search exec "firefox"
+bindsym XF86LaunchA exec "emacs"
+bindsym XF86Explorer exec "thunar"
+bindsym XF86Display exec "xrandr --auto"
+bindsym XF86AudioRaiseVolume exec "pulseaudio-ctl up"
+bindsym XF86AudioLowerVolume exec "pulseaudio-ctl down"
+bindsym XF86AudioMute exec "pulseaudio-ctl mute"
 font pango:Migu1M 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -150,7 +162,7 @@ bindsym $mod+o scratchpad show
 # finds out, if available)
 bar {
     #mode hide
-    status_command i3status --config ~/.i3/kasumi.i3status.conf
+    status_command i3status --config ~/.i3/multi/i3status.conf
     #status_command py3status -c ~/.i3status.conf
     position bottom
     #position top

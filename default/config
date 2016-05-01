@@ -18,7 +18,6 @@ exec "dropbox &"
 exec "xset s 3600 3600"
 exec "~/.i3/toggle-touchpad.sh"
 exec "xcompmgr -n"
-exec "conky --config ~/.i3/conky.conf &"
 
 bindsym $mod+b exec firefox
 
@@ -162,7 +161,7 @@ bindsym $mod+o scratchpad show
 # finds out, if available)
 bar {
     #mode hide
-    status_command i3status --config ~/.i3/multi.i3status.conf
+    status_command i3status --config ~/.i3/default/i3status.conf
     #status_command py3status -c ~/.i3status.conf
     position bottom
     #position top
